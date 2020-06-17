@@ -11,6 +11,8 @@ public class Player : MonoBehaviour{
     public float maxHeight;
     public float minHeight;
 
+    public GameObject effect;
+
     public int health = 3;
 
     // Update is called once per frame
@@ -22,8 +24,10 @@ public class Player : MonoBehaviour{
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight) {
+            Instantiate(effect, transform.position, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
         }else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight) {
+            Instantiate(effect, transform.position, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
         }  
     }
