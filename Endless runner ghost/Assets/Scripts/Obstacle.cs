@@ -9,12 +9,19 @@ public class Obstacle : MonoBehaviour{
 
     public GameObject effect;
 
+    private Animator camAnim;
+
+    private void Start(){
+        camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+    }
+
     private void Update(){
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("Player")){
+            camAnim.SetTrigger("shake");
             Instantiate(effect, transform.position, Quaternion.identity);
 
             other.GetComponent<Player>().health -= damage;
