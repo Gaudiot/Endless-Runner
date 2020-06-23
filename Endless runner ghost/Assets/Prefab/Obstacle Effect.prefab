@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4312957599031781487}
   - component: {fileID: 4312957599031781484}
   m_Layer: 0
-  m_Name: Particle
+  m_Name: Obstacle Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ ParticleSystem:
   serializedVersion: 6
   lengthInSec: 0.1
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 2
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
